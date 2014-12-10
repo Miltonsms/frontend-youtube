@@ -1,21 +1,9 @@
-$(document).ready(function(){
-  $('.boton').click(function(){
-    var pais = $('input:text[name=nombre]').val();
-    var service_url = 'https://www.googleapis.com/freebase/v1/search';
-    var params = {
-    'query': pais,
-    'limit': 10,
-    'indent': true
-  };
-  $.getJSON(service_url + '?callback=?', params, function(response) {
-    $(".mostrar").empty();
-    var conteo = 0
-    $.each(response.result,function(i, result){
-      conteo +=1
-    var obj={text:result['name']}.text;
-    var insertar='<tr>'+'<td>'+conteo+'</td>'+'<td>'+obj+'</td>'+'</tr>'
-    $('.mostrar').append(insertar);
-});
-  });
-});
-});
+$(document).ready(function () {
+    //Knockout Test
+        var url = "https://www.googleapis.com/youtube/v3/search?key=AIzaSyCZIdvJkrCNDjswEeRtMTbN6B9yEiz2pEo&channelId=VLLLSt653h2wwu3IeYhiL9Qwyg&part=snippet%2Cid&order=date&maxResults=50";
+        var viewModel = {};
+        $.getJSON(url, function (data) {
+            viewModel.model = ko.mapping.fromJS(data);
+            ko.applyBindings(viewModel);
+        });
+    });
