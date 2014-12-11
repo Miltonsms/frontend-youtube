@@ -64,14 +64,23 @@
   <!-- container donde va ir toda la informacion -->
 	<div class= "container">
 				<div class="row">
-			<div class="col-md-4" data-bind="foreach: model.items"> 
-          <table class="table table-condensed" >
-              <tr class="btn btn-default" data-bind="text: id.videoId"></tr>
-            </table>
+			<div class="col-md-4" > 
+              <div class="panel panel-default" >
+<div class="panel-heading">videos0
+</div>
+<div class="panel-body" data-bind="foreach: model.items ">
+<p class="color" data-bind="text: snippet.title"> </p>
+            <iframe data-bind="attr: {src: 'http://www.youtube.com/embed/' + id.videoId}" width="300" height="300"></iframe>
             </div>
-			 <div class="col-md-8 milton">
-        <iframe id="ytplayer"  width="720" height="405"
-src="https://www.youtube.com/embed/cMH8e-P_MTQ"></iframe>
+            </div>
+            </div>
+       <div class="col-md-8 milton">
+       <iframe id="ytplayer"  width="650" height="450"
+src="https://www.youtube.com/embed/V1UEV1JTZ8U"></iframe>
+</div>
+</ul>
+</div>
+
 			 </div>
        </div>
     </div>
@@ -95,7 +104,6 @@ src="https://www.youtube.com/embed/cMH8e-P_MTQ"></iframe>
 <script src="/home/hp/Escritorio/frontend-youtube/js/jquery-2.1.1.js"></script>
 <!-- js knockout -->
 <script src="knockout/knockout-2.2.1.js"></script>
-<script src="knockout/knockout.mapping-latest.debug.js"></script>
 <script src="knockout/knockout.mapping-latest.js"></script>
 </body>
 </htlm>
