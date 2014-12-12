@@ -32,15 +32,17 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Categoria de Videos <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Mas Vistos</a></li>
+            <li class="divider"></li>
+            <li class="uno"><a href="#">Mas Vistos</a></li>
             <li class="divider"></li>
             <li><a href="#">Menos Vistos</a></li>
             <li class="divider"></li>
-            <li><a href="#">Mejor rating</a></li>
+            <li class="tres"><a href="#">Mejor rating</a></li>
             <li class="divider"></li>
             <li><a href="#">Menor rating</a></li>
             <li class="divider"></li>
             <li><a href="#">Orden Alfabetico a-z</a></li>
+
           </ul>
         </li>
       </ul>
@@ -64,23 +66,24 @@
   <!-- container donde va ir toda la informacion -->
 	<div class= "container">
 				<div class="row">
-			<div class="col-md-4" > 
-              <div class="panel panel-default" >
-<div class="panel-heading">videos0
-</div>
-<div class="panel-body" data-bind="foreach: model.items ">
-<p class="color" data-bind="text: snippet.title"> </p>
-            <iframe data-bind="attr: {src: 'http://www.youtube.com/embed/' + id.videoId}" width="300" height="300"></iframe>
-            </div>
-            </div>
-            </div>
+<div class="col-md-4" > 
+  <div class="panel panel-default" >
+    <div class="panel-heading">videos
+    </div>
+    <div class="panel-body imagen" >
+      <div data-bind="foreach: Model.items" class="ocultar">
+        <p class="color" data-bind="text: snippet.title"> </p>
+        <img  class="imagen2" data-bind="attr: {src: snippet.thumbnails.default.url}" width="90" height="120"></img>
+      </div>
+      </div>
+    </div>
+  </div>
        <div class="col-md-8 milton">
        <iframe id="ytplayer"  width="650" height="450"
 src="https://www.youtube.com/embed/V1UEV1JTZ8U"></iframe>
 </div>
 </ul>
 </div>
-
 			 </div>
        </div>
     </div>
