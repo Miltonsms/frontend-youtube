@@ -1,34 +1,15 @@
 .imagen{
-	overflow-x:hidden; 
-	background: url(../pictures/l.png);	
-}
-.ct{ 
-	text-align:center;
-font-family: Vivaldi;
-}
-img{ 
-	width:100%;
-}
-.borde{
-
-	border: 4px solid #BDBDBD;
-}
-body{
-	background-color: #1C1C1C;
-}
-.color{
-	color: black;
-
-}
-.ocultar{
-	display: none;
-	text-align: center;
-}
-.ocultar1{
-	display: none;
-	text-align: center;
-}
-.imagen2{
-	width:120px; 
-	height:120px;
-}
+overflow-x:hidden; 
+background: url(../pictures/l.png);	}.ct{ 
+text-align:center;
+font-family: Vivaldi;}img{ 
+width:100%;}.borde{
+border: 4px solid #BDBDBD;}body{
+background-color: #1C1C1C;}.color{
+color: black;}.ocultar{
+display: none;
+text-align: center;}.ocultar1{
+display: none;
+text-align: center;}.imagen2{
+width:120px; 
+height:120px;}

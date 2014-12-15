@@ -71,16 +71,19 @@
     <div class="panel-heading">videos
     </div>
     <div class="panel-body imagen" >
-      <div data-bind="foreach: Model.items" class="ocultar">
+        <div data-bind="foreach: Model.items" class="ocultar">
+              <div data-bind="click:function() {$('.milton').empty();$('.milton').append('<iframe width=\'560\' height=\'315\' src=\'http://www.youtube.com/embed/'+id.videoId+'\' frameborder=\'0\' allowfullscreen></iframe>')} " >
+
         <p class="color" data-bind="text: snippet.title"> </p>
-        <img  class="imagen2" data-bind="attr: {src: snippet.thumbnails.default.url}" width="90" height="120"></img>
+        <img  class="imagen2" data-bind="attr: {src: snippet.thumbnails.default.url}" width="90" height="120"></img></div>
       </div>
       </div>
     </div>
   </div>
-       <div class="col-md-8 milton">
-       <iframe id="ytplayer"  width="650" height="450"
-src="https://www.youtube.com/embed/V1UEV1JTZ8U"></iframe>
+       <div class="col-md-8" >
+       <div class="embed-responsive embed-responsive-16by9">
+       <div class="milton" ></div>
+</div>
 </div>
 </ul>
 </div>
