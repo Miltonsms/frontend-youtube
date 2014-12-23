@@ -1,12 +1,24 @@
-$(document).ready(function () {
-    //Knockout Test
-        var url = "https://www.googleapis.com/youtube/v3/search?key=AIzaSyCZIdvJkrCNDjswEeRtMTbN6B9yEiz2pEo&channelId=UCZJ7m7EnCNodqnu5SAtg8eQ&part=snippet%2Cid&order=viewCount&maxResults=5";
-        var viewModel = {};
-        $.getJSON(url, function (data) {
-            viewModel.Model = data;
-            ko.applyBindings(viewModel);
-        });
-    });
+
+/* variables */
+
+mil = [];
+
+/* ingressos */
+$(document).ready(function() {
+	$("[data-toggle=popover]")
+		.popover({html:true})
+	});
+jQuery(document).ready(function($) {
+	$.ajax({url : "https://www.googleapis.com/youtube/v3/videos?part=snippet%2C+statistics&id=UaMBtjxvuMA&maxResults=50&key=AIzaSyCZIdvJkrCNDjswEeRtMTbN6B9yEiz2pEo",
+		dataType : "jsonp",
+			success : function(parsed_json) {
+				mil.push(parsed_json["items"]["id"]["Idvideo"])
+					$(".milton").append(mil);
+
+											}
+									});
+								});
+
 $(document).ready(function()
 {
 $(".uno").click(function () {
@@ -14,4 +26,3 @@ $('.ocultar ').toggle("slow");
 });
 });
 
-//v22617585
