@@ -6,7 +6,7 @@
  	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
  	<link rel="shortcut icon" type="image/png" href="img/photo.jpg.png"/>
 
- <!-- Jquery -->
+ 	 <!-- Jquery -->
  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"> </script>
  <script type='text/javascript' src='knockout/knockout-3.2.0.js'></script>
  <!-- Bootstrap core CSS -->
@@ -36,9 +36,13 @@
         <li class="pull-right dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Filters <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="#">+ Views</a></li>
+            <li><a href="#" class="views">+ Views</a></li>
             <li><a href="#">+ Plays</a></li>
-            <li><a href="#" data-bind="click:function() {$('.title').sort();}">Sorted (A-Z)</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
           </ul>
         </li>
       </ul>
@@ -52,20 +56,15 @@
   </div><!-- /.container-fluid -->
 </nav><!--Navbar-->
 
-
-<p data-bind="text:allItems"></p>
-<button data-bind="click: sortItems, enable: allItems().length > 1">Sort</button>
-
  <div class="container">
   <div class="jumbotron top">
   <div class="row">
-
-   <div class="col-md-4">
-   	<img src="images/1418727372_youtube.svg" class="img-responsive" alt="Responsive image">
+   <div class="col-md-2">
+   	<img src="images/vevo.png" class="img-responsive" alt="Responsive image">
    </div>
-   
-   <div class="col-md-6">
-   <img src="images/lastfm.png" height="250" width="300"class="img-responsive img-rounded" alt="Responsive image">
+   <div class="col-md-1"></div>
+   <div class="col-md-8">
+   <img src="images/1000px-Vevo_logo.svg.png" class="img-responsive img-rounded" alt="Responsive image">
    </div>
   </div>
  </div>
@@ -73,38 +72,31 @@
 
 <div class="container up">
  <div class="row">
-  <div class="col-md-3">
-	<div class="panel panel-inverse">
- 	 	<div class="panel-heading">Watch the video</div>
-  		<div class="panel-body"><!--Start the video-->
-	<table>
-			<thead>
-				<tr>
-					<th></th>
-				</tr>
-			</thead>
-            <tbody class ="yo">
-				
+  <div class="col-md-2">
+	<div class="table-responsive">
+	<table class="table table-striped">
+            <tbody data-bind="foreach: model.items">
+					<td>
+					<a href="#" data-bind="text: snippet.title"></a>
+					<img data-bind="attr: {src: snippet.thumbnails.default.url}" class="img-responsive" alt="Responsive image" height="120" width="90">
+					</td>
             </tbody>
 	</table>
-	</div>
-	</div>
-  </div><!--col-md-3-->
-	
-  	<div class="col-md-9" data-bind="foreach: contacts">
+	</div><!--table-responsive-->
+  </div>
+	<div class="col-md-1"></div>
+  	<div class="col-md-8">
 		<div class="panel panel-inverse">
  	 		<div class="panel-heading">Watch the video</div>
-  			<div class="panel-body" data-bind="kind"><!--Start the video-->
+  			<div class="panel-body"><!--Start the video-->
                 <div class="embed-responsive embed-responsive-16by9">
-                <div class="video"></div>
-                <div class="milton">fasdfsad</div>
+                <div id="player"></div>
                 </div>
-        </div>
+        	</div>
 		  </div>
 	  </div>
   </div>
 </div>
-
 
 
 <div class="navbar navbar-inverse navbar-fixed-bottom">
