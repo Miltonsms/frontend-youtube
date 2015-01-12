@@ -25,6 +25,7 @@ body {
 .panel {
 	background-color: #222222;
 	color: white;
+
 }
 
 .panel-body {
@@ -57,6 +58,11 @@ a {
 }
 
 .videos {
-	height: 508px;
+	height: 450px;
 }
+.color{
+background-color: #2E2E2E;
+ color: #ffffff;
+}
+
 
