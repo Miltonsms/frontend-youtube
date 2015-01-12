@@ -6,42 +6,58 @@
  	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
  	<link rel="shortcut icon" type="image/png" href="img/photo.jpg.png"/>
 
+ <!-- Kendo -->
+ <link href="Kendo/kendo.common.min.css" rel="stylesheet">
+ <link href="Kendo/kendo.silver.min.css" rel="stylesheet">
+ <link rel="stylesheet" href="http://cdn.kendostatic.com/2014.3.1119/styles/kendo.default.min.css">
  <!-- Jquery -->
  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"> </script>
  <script type='text/javascript' src='knockout/knockout-3.2.0.js'></script>
+ <script type='text/javascript' src='knockout/knockout.simpleGrid.3.0.js'></script>
  <!-- Bootstrap core CSS -->
  <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
  <link href="bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
  <link href="css/styles.css" rel="stylesheet">
+ <!--Close of all the scripts in head-->
 
 </head>
 <body>
-
+<!--Navbar Top-->
 	<nav class="navbar navbar-inverse" role="navigation">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+  	 <div class="container-fluid">
+     <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">Frontend-youtube</a>
-    </div>
+       </button>
+       <a class="navbar-brand" href="#">Frontend-youtube</a>
+     </div><!--Close of Navbar Header-->
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
+    <!--Start the toggle-->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <li class="pull-right dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Filters <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="#">+ Views</a></li>
-            <li><a href="#">+ Plays</a></li>
-            <li><a href="#" data-bind="click:function() {$('.title').sort();}">Sorted (A-Z)</a></li>
-          </ul>
-        </li>
-      </ul>
+
+           								<li><a href="#" data-bind='click: sortByViews'>Most Viewed</a></li>
+								<li class="divider"></li>
+								<li><a href="#" data-bind='click: sortByLestViews' >less Views</a></li>
+								<li class="divider"></li>
+								<li><a href="#" data-bind= 'click: sortByName'>alphabetical a-z</a></li>
+								<li class="divider"></li>
+								<li><a href="#" data-bind= 'click: sortByName_z_a'>alphabetical z-a</a></li>
+								<li class="divider"></li>
+								<li><a href="#" data-bind='click: sortByComments'>Most Comments</a></li>
+								<li class="divider"></li>
+								<li><a href="#" data-bind='click: sortByLestComments'>Lest Comments</a></li>
+       
+          </ul><!--Close of ul dropdown-->
+        </li><!--Close of pull-right-->
+      </ul><!--Close of navbar with toogle inside-->
       <form class="pull-right navbar-form navbar-left" role="search">
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Search">
@@ -50,54 +66,84 @@
       </form>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
-</nav><!--Navbar-->
+</nav><!--Close of Navbar-->
+<!--Close of Navbar Top-->
 
-
-<p data-bind="text:allItems"></p>
-<button data-bind="click: sortItems, enable: allItems().length > 1">Sort</button>
-
+<!--Container with the last fm icon inside-->
  <div class="container">
   <div class="jumbotron top">
   <div class="row">
+ 
+	<div class="col-md-3"></div>
+	<div class="col-md-6">
+  <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+  </ol>
 
-   <div class="col-md-4">
-   	<img src="images/1418727372_youtube.svg" class="img-responsive" alt="Responsive image">
-   </div>
-   
-   <div class="col-md-6">
-   <img src="images/lastfm.png" height="250" width="300"class="img-responsive img-rounded" alt="Responsive image">
-   </div>
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <img src="" alt="...">
+      <div class="carousel-caption">
+        muy buena imagen
+      </div>
+    </div>
+    <div class="item">
+      <img src="" alt="...">
+      <div class="carousel-caption">
+        eso
+      </div>
+    </div>
+    ...
   </div>
- </div>
- </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+</div>
+<div class="col-md-3"></div>
+
+  </div><!--Close of row-->
+ </div><!--Close of jumbotron-->
+ </div><!--Close of container-->
+
 
 <div class="container up">
  <div class="row">
-  <div class="col-md-3">
+  <div class="col-md-6">
 	<div class="panel panel-inverse">
- 	 	<div class="panel-heading">Watch the video</div>
-  		<div class="panel-body"><!--Start the video-->
-	<table>
-			<thead>
-				<tr>
-					<th></th>
-				</tr>
-			</thead>
-            <tbody class ="yo">
-				
-            </tbody>
-	</table>
-	</div>
-	</div>
+ 	 	<div class="panel-heading">Choose one video</div>
+      <div data-bind="kendoGrid: gridOptions"></div>
+        <script id="rowTmpl" type="text/html">
+            <tr data-bind="click:function() {$('.video').empty();$('.video').append('<iframe width=\'560\' height=\'315\' src=\'http://www.youtube.com/embed/'+ids+'\' frameborder=\'0\' allowfullscreen></iframe>')}">
+                <td data-bind="text: name"></td>
+                <td> <img width="100px" height="100px" data-bind="attr:{src: images}" /></td>
+				<td data-bind="text: view"></td>
+				<td data-bind="text: like"></td>
+				<td data-bind="text: comment"></td>
+            </tr>
+        </script>
+  		  <div class="panel-body">
+		  </div><!--panel body-->
+		</div><!--panel close-->
   </div><!--col-md-3-->
 	
-  	<div class="col-md-9" data-bind="foreach: contacts">
-		<div class="panel panel-inverse">
+  	<div class="col-md-6">
+		<div class="panel panel-inverse videos">
  	 		<div class="panel-heading">Watch the video</div>
-  			<div class="panel-body" data-bind="kind"><!--Start the video-->
+  			<div class="panel-body"><!--Start the video-->
                 <div class="embed-responsive embed-responsive-16by9">
                 <div class="video"></div>
-                <div class="milton">fasdfsad</div>
                 </div>
         </div>
 		  </div>
@@ -105,20 +151,22 @@
   </div>
 </div>
 
-
-
 <div class="navbar navbar-inverse navbar-fixed-bottom">
  <div class="container">
-  <p class="navbar-text pull-left">Site Built By: Sergio Merida</p>
-  <a href="https://github.com/SergioMerida" target="blank" class="navbar-btn btn-danger btn pull-right">Look my Github</a>
- </div>
-</div>
+  <p class="navbar-text pull-left">Site Built By: Milton </p>
+  <a href="https://github.com/Miltonsms" target="blank" class="navbar-btn btn-danger btn pull-right">Look my Github</a>
+ </div><!--container-->
+</div><!--navbar fixed bottom-->
 	
 	<!--Javascript-->
 	<script src="js/script.js"></script>
-	<!-- Bootstrap -->
+	<!--JS Bootstrap -->
 	<script src="bootstrap/js/bootstrap.js"></script>
 	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<!--JS Kendo -->
+	<script src="Kendo/kendo.all.min.js"></script>
+	<script src="Kendo/knockout-kendo.min.js"></script>
+
 </body>
 
 </html>
