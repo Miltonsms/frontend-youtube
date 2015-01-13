@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title ><span class"glyphicon glyphicon-music" aria-hidden="true"></span></title>>
 	<meta charset="utf-8">
  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
  	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -14,6 +15,8 @@
  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"> </script>
  <script type='text/javascript' src='knockout/knockout-3.2.0.js'></script>
  <script type='text/javascript' src='knockout/knockout.simpleGrid.3.0.js'></script>
+
+
  <!-- Bootstrap core CSS -->
  <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
  <link href="bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
@@ -22,10 +25,17 @@
 
 </head>
 <body>
+
+
 <!--Navbar Top-->
 	<nav class="navbar navbar-inverse" role="navigation">
   	 <div class="container-fluid">
-     <!-- Brand and toggle get grouped for better mobile display -->
+     <div class="row">
+     <div class="col-md-2">
+     
+       </div> <!-- cierre de col-2-->
+       <div class="col-md-8">
+       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
         <span class="sr-only">Toggle navigation</span>
@@ -33,37 +43,23 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
        </button>
-       <a class="navbar-brand" href="#">Frontend-youtube</a>
+       <a class="navbar-brand" href="#" data-bind='click: sortByViews'>Los menos vistos</a>
+       <a class="navbar-brand" href="#" data-bind='click: sortByLestViews' >los mas vistos</a>
+       <a class="navbar-brand" href="#" data-bind='click: sortByName'>Videos  a-z</a>
+       <a class="navbar-brand" href="#" data-bind='click: sortByName_z_a'>Videos z-a</a>
+       <a class="navbar-brand" href="#" data-bind='click: sortByComments'>Menos comentados</a>
+       <a class="navbar-brand" href="#" data-bind='click: sortByLestComments'>Mas comentados</a>
+       <!--cierre de col-8-->
+       <div class="col-md-2"></div>
+       </div>
      </div><!--Close of Navbar Header-->
 
     <!--Start the toggle-->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <li class="pull-right dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Filters <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-
-           								<li><a href="#" data-bind='click: sortByViews'>Most Viewed</a></li>
-								<li class="divider"></li>
-								<li><a href="#" data-bind='click: sortByLestViews' >less Views</a></li>
-								<li class="divider"></li>
-								<li><a href="#" data-bind= 'click: sortByName'>alphabetical a-z</a></li>
-								<li class="divider"></li>
-								<li><a href="#" data-bind= 'click: sortByName_z_a'>alphabetical z-a</a></li>
-								<li class="divider"></li>
-								<li><a href="#" data-bind='click: sortByComments'>Most Comments</a></li>
-								<li class="divider"></li>
-								<li><a href="#" data-bind='click: sortByLestComments'>Lest Comments</a></li>
-       
-          </ul><!--Close of ul dropdown-->
         </li><!--Close of pull-right-->
       </ul><!--Close of navbar with toogle inside-->
-      <form class="pull-right navbar-form navbar-left" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <button type="submit" class="btn btn-danger">Submit</button>
-      </form>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav><!--Close of Navbar-->
@@ -75,7 +71,7 @@
   <div class="row">
  
 	<div class="col-md-3">
-		<a href="https://www.facebook.com/lastfm" target="blank" ><img  src="http://www.ericcressey.com/wp-content/themes/EC_theme/images/facebook-3d.png"</a>
+		<a href="https://www.facebook.com/lastfm" target="blank" ><img  src="http://www.ericcressey.com/wp-content/themes/EC_theme/images/facebook-3d.png"></a>
 	</div>
 	<div class="col-md-6">
   <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -96,7 +92,7 @@
       </div>
     </div>
     <div class="item">
-      <img src="/home/hp/Escritorio/frontend-youtube/images/unnamed2 (1).png" alt="...">
+      <img src="images/unnamed2 (1).png" alt="...">
       <div class="carousel-caption">
         eso
       </div>
@@ -108,7 +104,7 @@
       </div>
     </div>
     <div class="item">
-      <img src="/home/hp/Escritorio/frontend-youtube/images/lastfm1440x900v2 (4).jpg" alt="...">
+      <img src="images/lastfm1440x900v2 (4).jpg" alt="">
       <div class="carousel-caption">
         eso
       </div>
@@ -127,7 +123,7 @@
 </div>
 </div>
 <div class="col-md-3">
-	<a href="https://twitter.com/lastfm" target="blank" ><img  src="http://www.munimanantay.gob.pe/portal/Imagens/twitter.png"</a>
+	<a href="https://twitter.com/lastfm" target="blank" ><img  src="http://www.munimanantay.gob.pe/portal/Imagens/twitter.png"></a>
 </div>
 
   </div><!--Close of row-->
@@ -178,9 +174,12 @@
   <a href="https://github.com/Miltonsms" target="blank" class="navbar-btn btn-danger btn pull-right">Look my Github</a>
  </div><!--container-->
 </div><!--navbar fixed bottom-->
-	
+
 	<!--Javascript-->
+
 	<script src="js/script.js"></script>
+  <!--efecto-->
+  <script src="js/script2.js" type="text/javascript"></script>
 	<!--JS Bootstrap -->
 	<script src="bootstrap/js/bootstrap.js"></script>
 	<script src="bootstrap/js/bootstrap.min.js"></script>
