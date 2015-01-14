@@ -3,6 +3,13 @@
  * @author Sergio Merida <tabarinisergio@gmail.com> 
  * Save all the data in arrays and makes easier manage with knockout
 */
+
+function loadVideo(youtubeName,youtubeVideoId,youtubeView,youtubeLike){
+	$(".modal-content").empty();
+	$(".modal-content").append("<div class=\"embed-responsive embed-responsive-16by9\"><iframe class=\"embed-responsive-item\" width=\"560\" height=\"315\" src=\"http://www.youtube.com/embed/"+youtubeVideoId+"\" frameborder=\"0\" allowfullscreen></iframe></div><br><br><span>Name: <strong>"+youtubeName+"</strong></span><br><span>Views: <strong>"+youtubeView+"</strong></span><br><span>Likes: <strong>"+youtubeLike+"</strong></span><br><span>Watch on youtube: <a href='https://www.youtube.com/watch?v="+youtubeVideoId+"'>https://www.youtube.com/watch?v="+youtubeVideoId+"</a>");
+};
+
+
 stringUrl="";
 UrlData = "";
 viewCount = [];
@@ -12,10 +19,11 @@ id = [];
 title = [];
 description = [];
 image = [];
-
+var initialData = []
 /**
  * Dropdown of filters 
 */
+
 $(document).ready(function() {
 	$('.dropdown-toggle').dropdown()
 });
@@ -50,7 +58,7 @@ $(document).ready(function($) {
 				};			
 			console.log(id)
 			console.log(title)
-			var initialData = []
+			
 			for (var e = 0; e<=49; e++) {
 				initialData.push(({name:title[e], images:image[e], view:viewCount[e], like:likeCount[e], comment:commentCount[e]
 , ids:id[e]}))
@@ -140,8 +148,30 @@ ko.applyBindings(new ViewModel(initialData));
 		} /*end of variable with if and else*/
 
 	});/*End of first ajax call*/
+	$(".botonSearch").click(function(){
+		var busqueda = $(".busqueda1").val();
+			$(".busqueda1").val("");
+			if(busqueda.length!=0){
+				$(".modal-content").empty();
+				for (var i = 0; i <=49; i++) {
+					var datojson = initialData[i]['name'].toLowerCase();
+					if(datojson.indexOf(busqueda)>-1){
+						$(".modal-content").append("<div class='eachResult'><strong>Title: "+initialData[i]['name']+"</strong><br>"+"</div>");
+						$(".modal-content").append('<button type="button" onclick="loadVideo(\''+initialData[i]['name']+'\',\''+initialData[i]['ids']+'\',\''+initialData[i]['view']+'\',\''+initialData[i]['like']+'\')" class="btn btn-primary" data-dismiss="modal">Load video</button>');
+					
+					};//cierre de segundo if
+
+				};//cierre de for
+			}; /*cierre primer if*/
+			
+
+	});
 	
 });/*End of ready function*/ 
+
+
+
+
 
 
 
