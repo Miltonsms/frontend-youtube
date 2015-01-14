@@ -38,7 +38,7 @@
        <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
        <a class="navbar-brand" href="#" data-bind='click: sortByViews'>Los menos vistos</a>
-       <a class="navbar-brand" href="#" data-bind='click: sortByLestViews' >los mas vistos</a>
+       <a class="navbar-brand" href="#" data-bind='click: sortByLestViews' >Los mas vistos</a>
        <a class="navbar-brand" href="#" data-bind='click: sortByName'>Videos  a-z</a>
        <a class="navbar-brand" href="#" data-bind='click: sortByName_z_a'>Videos z-a</a>
        <a class="navbar-brand" href="#" data-bind='click: sortByComments'>Menos comentados</a>
@@ -55,9 +55,15 @@
 	     	 </form>
 			<div class="modal fade bs-example-modal-lg " tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
 				<div class="modal-dialog modal-lg">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 					<div class="modal-content">
+
+
+
+
 						
 					</div>
+
 				</div>
 			</div>
        </div> <!--cierre de col3-->
@@ -98,25 +104,21 @@
     <div class="item active">
       <img  src="http://www.visual-telling.com/wp-content/uploads/2012/08/lastfm_front1.png" alt="..." >
       <div class="carousel-caption">
-        muy buena imagen
       </div>
     </div>
     <div class="item">
       <img src="images/unnamed2 (1).png" alt="...">
       <div class="carousel-caption">
-        eso
       </div>
     </div>
     <div class="item">
       <img src="images/lastfm.png" alt="..." >
       <div class="carousel-caption">
-        eso
       </div>
     </div>
     <div class="item">
       <img src="images/lastfm1440x900v2 (4).jpg" alt="">
       <div class="carousel-caption">
-        eso
       </div>
     </div>
   </div>
@@ -143,7 +145,7 @@
 
 <div class="container up">
  <div class="row">
-  <div class="col-md-6 ">
+  <div class="col-md-6 " >
 	<div class="panel panel-inverse " >
  	 	<div class="panel-heading">Choose one video</div>
       <div data-bind="kendoGrid: gridOptions" class="color"></div>
@@ -156,18 +158,17 @@
 				<td data-bind="text: comment"></td>
             </tr>
         </script>
-  		  <div class="panel-body ">
+  		  <div class="panel-body " >
 		  </div><!--panel body-->
 		</div><!--panel close-->
   </div><!--col-md-3-->
-	<br>
   	<div class="col-md-6">
 		<div class="panel panel-inverse videos">
  	 		<div class="panel-heading">Watch the video</div>
  	 		<br>
 				<div class="panel-body"><!--Start the video-->
 				
-            	<div class="embed-responsive embed-responsive-16by9">
+            	<div class="embed-responsive embed-responsive-16by9" id="video">
 
             		<div class="video"></div>
             	</div>

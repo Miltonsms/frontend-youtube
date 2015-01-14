@@ -5,8 +5,8 @@
 */
 
 function loadVideo(youtubeName,youtubeVideoId,youtubeView,youtubeLike){
-	$(".modal-content").empty();
-	$(".modal-content").append("<div class=\"embed-responsive embed-responsive-16by9\"><iframe class=\"embed-responsive-item\" width=\"560\" height=\"315\" src=\"http://www.youtube.com/embed/"+youtubeVideoId+"\" frameborder=\"0\" allowfullscreen></iframe></div><br><br><span>Name: <strong>"+youtubeName+"</strong></span><br><span>Views: <strong>"+youtubeView+"</strong></span><br><span>Likes: <strong>"+youtubeLike+"</strong></span><br><span>Watch on youtube: <a href='https://www.youtube.com/watch?v="+youtubeVideoId+"'>https://www.youtube.com/watch?v="+youtubeVideoId+"</a>");
+	$(".video").empty();
+	$(".video").append("<div class=\"embed-responsive embed-responsive-16by9\"><iframe class=\"embed-responsive-item\" width=\"560\" height=\"315\" src=\"http://www.youtube.com/embed/"+youtubeVideoId+"\" frameborder=\"0\" allowfullscreen></iframe></div><br><br><span>Name: <strong>"+youtubeName+"</strong></span><br><span>Views: <strong>"+youtubeView+"</strong></span><br><span>Likes: <strong>"+youtubeLike+"</strong></span><br><span>Watch on youtube: <a href='https://www.youtube.com/watch?v="+youtubeVideoId+"'>https://www.youtube.com/watch?v="+youtubeVideoId+"</a>");
 };
 
 
@@ -166,7 +166,6 @@ ko.applyBindings(new ViewModel(initialData));
 			
 
 	});
-	
 });/*End of ready function*/ 
 
 
