@@ -9,6 +9,6 @@ Deben cumplir con los siguientes elementos:
 4. SE DEBEN ENFOCAR EN HACER SOLO LO QUE SE PIDE. Si quieren agregarle cosas adicionales DESPUES de terminar lo pedido, pueden hacerlo en otra "branch de git".
 5. El sitio se debe ver bien en computadora y en celular.
 
-# TE INVITO AVER EL RESULTADO FINAL
+# TE INVITO A VER EL RESULTADO FINAL
 
 ## http://miltonsms.github.io/frontend-youtube
